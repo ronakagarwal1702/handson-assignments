@@ -33,12 +33,12 @@ class Customer
             System.out.println("Balance updated");
         }
         else{
-            System.out.println("Account noy registered");
+            System.out.println("Account not registered");
         }
     }
     public void withdraw(long acc,int b)
     {
-        if(acc==acc_no)
+        if(acc==acc_no && b>bal)
         {
             bal=bal-b;
             System.out.println("Balance withdrawn successfully");
@@ -46,14 +46,18 @@ class Customer
         }
         else
         {
-            System.out.println("Account no is wrong");
+            System.out.println("Not permitted");
         }
     }
     public void display(long acc)
     {
         if(acc==acc_no)
         {
-        System.out.println("The total balance is :"+ bal);
+          System.out.println("The total balance is :"+ bal);
+        }
+        else
+        {
+            System.out.println("Account is not registered.");
         }
     }
 
@@ -70,6 +74,8 @@ public class Saving_Account
        qq.display(745891288);
        pp.withdraw(14231288,1200);
        pp.deposit(14231288,8500);
+       pp.display(14231288);
+       qq.display(4785963);
 
     }
 }
