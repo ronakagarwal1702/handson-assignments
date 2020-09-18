@@ -1,29 +1,28 @@
-class Manager extends Person
+class Manager extends Employee
 {
-    private String name;
-    private int dob;
-    private String gender;
-    private String grade;
-    private long phone;
-    private double salary;
-    account ac;
-    Address ad;
-    Manager(String name,int dob,String gender,String grade,long phone,double salary,account ac,Address ad)
+    double salary;
+    Manager(String name,long dob,String gender,long phone,Address address)
     {
-        super(name,dob,gender,grade,phone,salary,ac,ad);
+        super(name,dob,gender,phone,address);
     }
-    void update_salary()
+    Manager(String grade,double salary,int id,Account account)
     {
-        this.salary=this.salary*0.1;
+        super(grade,salary,id,account);
     }
-    void update_grade(String p)
+    @ Override
+    void display_details()
     {
-        this.grade=p;
+        System.out.println("The details of Manager is : ");
+        System.out.println("Name: "+get_name()+" "+"DOB: "+get_dob()+" "+"Gender: "+get_gender());
+        System.out.println("Grade: "+get_grade()+" "+"PHONE: "+get_phone()+" "+"Salary: "+get.salary());
     }
-    void update_balance(account p)
+    double getSalary()
     {
-        
-        //System.out.println("Balance updated");
-        p.bal=p.bal+this.salary;
+        return(salary);
     }
+    void update_salary(double salary)
+    {
+        this.salary=salary;
+    }
+
 }

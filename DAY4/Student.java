@@ -1,24 +1,18 @@
 class Student extends Person
 {
-    private String name;
-    private int dob;
-    private String gender;
-    private long phone;
-    Address ad;
-    Student(String name,int dob,String gender,long phone,Address ad)
+    private String grade;
+    public Student(String name,long dob,String gender,long phone,Address address)
     {
-        super(name,dob,gender,phone,ad);
+        super(name,dob,gender,phone,address);
     }
-    void update_salary()
+
+    @Override
+    void display_details()
     {
-        System.out.println("Not applicable");
+        System.out.println("The details of Student is : ");
+        System.out.println("Name: "+get_name()+" "+"DOB: "+get_dob()+" "+"Gender: "+get_gender()+"Phone "+get_phone());
     }
-    void update_grade(String p)
-    {
-        System.out.println("Not applicable");
-    }
-    void update_balance(account p)
-    {
-       System.out.println("Not applicable");
+    public void update_grade(String grade){
+        this.grade=grade;
     }
 }

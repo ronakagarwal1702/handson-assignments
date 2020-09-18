@@ -9,8 +9,8 @@ class Address
         this.city=city;
         this.pin=pin;
     }
-    void display_info()
+    void showAddress()
     {
-        System.out.println("State: "+state+" "+"city: "+city+" "+"pin: "+pin);
+        System.out.println("State: "+state+" "+"City: "+city+" "+"Pin: "+pin);
     }
 }
