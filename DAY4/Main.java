@@ -3,15 +3,13 @@ class Main
     public static void main(String args[])
     {
         Address address1=new Address("rajasthan","jaipur",302012);
-        Manager manager=new Manager("ronak",17021998,"male",9487563289,address1);
         Account account1=new Account(123654,10000);
-        Manager manager=new Manger("A+",15000,2015,account1);
+        Manager manager=new Manger("ronak",17021998,"male",9487563289,address1,121,"A+",15000,2015,account1);
         display_detail1(manger);
 
         Address address2=new Address("rajasthan","jaipur",302012);
-        Programmer programmer=new Manager("ronak",17021998,"male",9487563289,address2);
         Account account2=new Account(123654,10000);
-        Programmer programmer=new Manger("A+",15000,2015,account2);
+        Programmer program=new Programmer("rohot",1701998,"male",9487563289,address2,121,"B+",1500,2015,account2);
 
 
         Address address3=new Address("rajasthan","jaipur",302012);
@@ -34,7 +32,7 @@ class Main
         p.showAddress();
     }
 
-    
+
     public static void testUpdate(Person p)
     {
         if(p instanceof Student)

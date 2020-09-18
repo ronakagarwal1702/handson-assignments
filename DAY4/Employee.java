@@ -4,17 +4,13 @@ abstract class Employee extends Person
     Private int id;
     Private String grade;
     Private double salary;
-    public Employee(String name,long dob,String gender,long phone,Address address)
+    public Employee(String name,long dob,String gender,long phone,int id,String grade,double salary,Address address,Account account)
     {
         super(name,dob,gender,phone,address);
-    }
-    public Employee(String grade, double salary, int id,Account account)
-    {
+        this.account=account;
         this.grade=grade;
         this.salary=salary;
-        this.account=account;
         this.id=id;
-    }
     int get_id()
     {
         return(id);

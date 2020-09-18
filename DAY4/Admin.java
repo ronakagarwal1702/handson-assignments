@@ -1,13 +1,9 @@
 class Admin extends Employee
 {
     double salary;
-    public Admin(String name,long dob,String gender,long phone,Address address)
+    Admin(String name,long dob,String gender,long phone,int id,String grade,double salary,Address address,Account account)
     {
-        super(name,dob,gender,phone,address);
-    }
-    public Admin(String grade,double salary,int id,Account account)
-    {
-        super(grade,salary,id,account);
+        super(name,dob,gender,phone,address,id,grade,salary,address,account);
     }
 
 

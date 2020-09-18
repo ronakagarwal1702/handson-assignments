@@ -2,13 +2,9 @@ class Programmer extends Employee
 {
     double salary;
     private String language="C++";
-    public Programmer(String name,long dob,String gender,long phone,Address address)
+    Programmer(String name,long dob,String gender,long phone,int id,String grade,double salary,Address address,Account account)
     {
-        super(name,dob,gender,phone,address);
-    }
-    public Programmer(String grade,double salary,int id,Account account)
-    {
-        super(grade,salary,id,account);
+        super(name,dob,gender,phone,address,id,grade,salary,address,account);
     }
     @Override
     void display_details()

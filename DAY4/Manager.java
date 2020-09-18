@@ -1,13 +1,9 @@
 class Manager extends Employee
 {
     double salary;
-    Manager(String name,long dob,String gender,long phone,Address address)
+    Manager(String name,long dob,String gender,long phone,int id,String grade,double salary,Address address,Account account)
     {
-        super(name,dob,gender,phone,address);
-    }
-    Manager(String grade,double salary,int id,Account account)
-    {
-        super(grade,salary,id,account);
+        super(name,dob,gender,phone,address,id,grade,salary,address,account);
     }
     @ Override
     void display_details()
