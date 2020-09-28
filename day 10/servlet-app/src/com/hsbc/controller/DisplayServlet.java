@@ -2,6 +2,7 @@ package com.hsbc.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,11 +41,10 @@ public class DisplayServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		int id=1;
 		PrintWriter pw = response.getWriter();
-		while((String)session.getAttribute("key"+id)!=null)
+		ArrayList<String>l=(ArrayList<String>)session.getAttribute("key1");
+		for(String temp:l)
 		{
-			String item=(String)session.getAttribute("key"+id);
-			id++;
-			pw.println(item);
+			pw.println(temp);
 		}
 	}
 

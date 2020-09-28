@@ -2,6 +2,7 @@ package com.hsbc.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,13 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 /**
  * Servlet implementation class Item
  */
 @WebServlet("/Item")
 public class Item extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+	private static ArrayList<String> l=new ArrayList<>();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,18 +43,14 @@ public class Item extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String item = request.getParameter("it");
 		HttpSession session = request.getSession();
-		int id=1;
-	    while((String)session.getAttribute("key"+id)!=null)
-		{
-			id++;
-		}
-		session.setAttribute("key"+id, item);
+	    l.add(item);
+		session.setAttribute("key1", l);
 		PrintWriter pw = response.getWriter();
 		pw.print("<html><body><h>");
-		pw.println("item count= "+id);
+		pw.println("item count= "+l.size());
 		pw.print("</h></body></html>");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.html");
+		RequestDispatcher rd = request.getRequestDispatcher("item.html");
 		rd.include(request,response);
 		
 	}
